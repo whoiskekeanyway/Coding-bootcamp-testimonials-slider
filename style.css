@@ -154,3 +154,8 @@ ul li {
     z-index: 1;
   }
 }
+
+.attribution {
+  margin-top: 5rem;
+  text-align: center;
+}
