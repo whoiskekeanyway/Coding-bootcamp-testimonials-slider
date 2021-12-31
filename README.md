@@ -11,8 +11,6 @@ This is a solution to the [Coding bootcamp testimonials slider challenge on Fron
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 
@@ -35,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://www.frontendmentor.io/solutions/coding-bootcamp-testimonials-slider-HN5rRWM6z](https://www.frontendmentor.io/solutions/coding-bootcamp-testimonials-slider-HN5rRWM6z)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [coding-bootcamp-sliders.netlify.app](coding-bootcamp-sliders.netlify.app)
 
 ## My process
 
@@ -51,28 +49,43 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+- Using Javascript to control the slider is a great way to add interactivity to your website.
+- Using CSS Grid to create a responsive layout is a great way to create a flexible layout.
+- The getBoundingClientRect() method returns the size of an element and its position relative to the viewport.
+- The addEventListener() method attaches an event handler to the specified element.
+- The classList property returns the class name(s) of an element, as a DOMTokenList object.
+- The previousElementSibling property returns the previous element of the specified element, in the same tree level.
+- The nextElementSibling property returns the next element of the specified element, in the same tree level.
+- The forEach() method calls a function for each element in an array.
+- The forEach() method is not executed for empty elements.
+- The querySelector() method returns the first element that matches a specified CSS selector(s) in the document.
 
-To see how you can add code snippets, see below:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+window.onkeydown = function (e) {
+  const key = e.keyCode;
+  e.preventDefault();
+  if (key === 37) {
+    const currentSlide = track.querySelector(".current-slide");
+    const prevSlide = currentSlide.previousElementSibling;
+    moveToSlide(track, currentSlide, prevSlide);
+  } else if (key === 39) {
+    const currentSlide = track.querySelector(".current-slide");
+    const nextSlide = currentSlide.nextElementSibling;
+    moveToSlide(track, currentSlide, nextSlide);
+  }
+};
+
+The onkeydown event occurs when the user is pressing a key (on the keyboard).
+The preventDefault() method is used to prevent the browser from executing the default action of the selected element
+The keyCode property returns the numeric value of the pressed key.
+The if statement checks if the key pressed is the left arrow key.
+The if statement checks if the key pressed is the right arrow key.
+The strict equality operator (===) checks whether its two operands are equal, returning a Boolean result.
+
+
+
 ```
-
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
 
 
 ## Author
